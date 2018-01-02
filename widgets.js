@@ -10,10 +10,12 @@
         $(this).empty().append($('<span class="tip"></span><span class="fill"></span>'));
         var fill = $(this).find('.fill'),
             tip = $(this).find('.tip');
-        if ($(this).attr('data-value') !== "Error") {
+        if (!isNaN($(this).attr('data-value'))) {
+			if(!$(this).attr("data-max"))$(this).attr("data-max",100);
+			if(!$(this).attr("data-min"))$(this).attr("data-min",0);
             var value = new Number($(this).attr('data-value')).toPrecision(3),
-                max = new Number($(this).attr("data-max") || 100),
-                min = new Number($(this).attr("data-min") || 0),
+                max = $(this).attr("data-max"),
+                min = $(this).attr("data-min"),
                 origin = 100 * (new Number($(this).attr("data-origin")) - min || -min) / (max - min),
                 width = Math.abs(100 * value / (max - min));
             tip.text(value);
@@ -29,10 +31,12 @@
         $(this).empty().append($('<span class="tip"></span><span class="fill"></span>'));
         var fill = $(this).find('.fill'),
             tip = $(this).find('.tip');
-        if ($(this).attr('data-value') !== "Error") {
+        if (!isNaN($(this).attr('data-value'))) {
+			if(!$(this).attr("data-max"))$(this).attr("data-max",100);
+			if(!$(this).attr("data-min"))$(this).attr("data-min",0);
             var value = new Number($(this).attr('data-value')).toPrecision(3),
-                max = new Number($(this).attr("data-max") || 100),
-                min = new Number($(this).attr("data-min") || 0),
+                max = $(this).attr("data-max"),
+                min = $(this).attr("data-min"),
                 origin = 100 * (new Number($(this).attr("data-origin")) - min || -min) / (max - min),
                 height = Math.abs(100 * value / (max - min));
             tip.text(value);

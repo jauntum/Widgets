@@ -19,6 +19,36 @@
 	min-width:25rem;
 	height: 1rem;
 }
+
+	.vertical::before,
+    .vertical::after, 
+    .horizontal::before,
+    .horizontal::after {
+		display: inline-block;
+		text-align: center;
+		position: relative;
+    }
+
+    .vertical::before {
+        top: 100%;
+        content: attr(data-min);
+    }
+
+    .vertical::after {
+        content: attr(data-max);
+        bottom: 1rem;
+    }
+	
+	.horizontal::before {
+        top: -1rem;
+        content: attr(data-min);
+    }
+
+    .horizontal::after {
+        content: attr(data-max);
+        top: -1rem;
+        left: 100%;
+    }
 	
 	.vertical .fill, 
     .horizontal .fill {
