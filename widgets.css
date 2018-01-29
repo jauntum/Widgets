@@ -11,12 +11,10 @@
 .vertical{
 	width: 1rem;
     height: 100%;
-	min-height:25rem;
 }
 
 .horizontal{
     width: 100%;
-	min-width:25rem;
 	height: 1rem;
 }
 
@@ -157,20 +155,25 @@
     .pie svg text + text {
         font-size:7pt;
     }
+	
 .pie svg circle:focus, 
 .pie svg circle:last-of-type {
     stroke-width: 14;
 }
     .pie svg circle:focus + text,
-	.pie svg circle:focus + text + text
-    .pie svg circle:last-of-type + text,
-	.pie svg circle:last-of-type + text + text {
+    .pie svg circle:last-of-type + text{
+        display: block;
+    }
+    .pie svg circle:focus + text + text,
+    .pie svg circle:last-of-type + text + text {
         display: block;
     }
     .pie svg circle:focus ~ circle:last-of-type {
         stroke-width: 10;
     }
-        .pie svg circle:focus ~ circle:last-of-type + text,
-		.pie svg circle:focus ~ circle:last-of-type + text +text {
+        .pie svg circle:focus ~ circle:last-of-type + text {
+            display: none;
+        }
+        .pie svg circle:focus ~ circle:last-of-type + text +text  {
             display: none;
         }
